@@ -51,7 +51,6 @@ def get_data():
         else:
             return jsonify({
                 "error": "Unauthorized", 
-                'password used': auth_header.split(" ")[-1],
                 'db password': SERVICE_PASSWORD,
                 'failed attempts': failed_attempts[client_ip]["count"],
             }), 401
@@ -61,7 +60,6 @@ def get_data():
     
     return jsonify({
         "app": "Service",
-        "message": "Success", 
         "data": "Secret Data from Service!",
      })
 

@@ -10,7 +10,7 @@ load_dotenv("/app/volume/.env.app")
 app = Flask(__name__)
 
 # Environment variables
-SERVICE_URL = os.getenv("SERVICE_URL", "http://service-app:5001")
+SERVICE_URL = os.getenv("SERVICE_URL", "")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 
 # Shared file for tracking failed attempts

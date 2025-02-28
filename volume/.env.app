@@ -1,4 +1,4 @@
 APP_NAME=App
 APP_VERSION=1.0
-SERVICE_URL=http://service-app:5001
-DB_PASSWORD=password
+SERVICE_URL=http://service:5001
+DB_PASSWORD=secret
