@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  flask-app:
+    image: app
+    build: ./app
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8000:5000"
+    volumes:
+      - C:\Dev\docker\volume:/app/volume  # Mount the volume
+    depends_on:
+      - service
+
+  service-app:
+    image: service
+    build: ./service
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - C:\Dev\docker\volume:/app/volume  # Mount the volume
+
+volumes:
+  volume:
+    external: false  # Docker will create this volume
