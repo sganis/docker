@@ -4,7 +4,7 @@ import time
 from dotenv import load_dotenv
 
 # Load .env file from the mounted volume
-load_dotenv("/app/volume/.env.service")
+load_dotenv("/data/.env.service")
 
 app = Flask(__name__)
 

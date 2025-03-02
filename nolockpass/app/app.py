@@ -5,7 +5,7 @@ import hashlib
 from dotenv import load_dotenv
 
 # Load .env file from the shared volume
-load_dotenv("/app/volume/.env.app")
+load_dotenv("/data/.env.app")
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ SERVICE_URL = os.getenv("SERVICE_URL", "")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 
 # Shared file for tracking failed attempts
-PASSWORD_FAILED_FILE = "/app/volume/password_failed.txt"
+PASSWORD_FAILED_FILE = "/data/password_failed.txt"
 
 def get_password_hash(password):
     """Generate a simple hash for the current password."""
